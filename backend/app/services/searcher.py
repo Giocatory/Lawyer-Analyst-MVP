@@ -1,4 +1,3 @@
-# backend/app/services/searcher.py
 import asyncio
 import httpx
 from bs4 import BeautifulSoup

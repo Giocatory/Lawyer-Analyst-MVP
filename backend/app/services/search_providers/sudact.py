@@ -1,4 +1,3 @@
-# backend/app/services/search_providers/sudact.py
 from typing import List
 import httpx
 from bs4 import BeautifulSoup

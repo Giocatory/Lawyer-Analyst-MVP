@@ -1,4 +1,3 @@
-# backend/app/api/search.py
 from fastapi import APIRouter
 from app.schemas.search import SearchRequest, SearchResponse
 from app.services.searcher import CaseSearcher

@@ -1,4 +1,3 @@
-// frontend/app.js
 async function runSearch() {
   const queryInput = document.getElementById("query");
   const query = queryInput.value.trim();

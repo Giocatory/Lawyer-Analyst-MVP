@@ -6,7 +6,6 @@ from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
-# backend/app/services/gemini.py
 class GeminiClient:
     def __init__(self):
         self.api_key = settings.GEMINI_API_KEY
@@ -54,7 +53,6 @@ class GeminiClient:
                 response.raise_for_status()
                 response_data = response.json()
                 
-                # ИСПРАВЛЕНО: правильная обработка ответа
                 candidate = response_data.get("candidates", [{}])[0]
                 content = candidate.get("content", {})
                 parts = content.get("parts", [{}])
