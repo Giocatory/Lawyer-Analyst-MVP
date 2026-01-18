@@ -1,0 +1,44 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юрист-Аналитик | Юридический анализ судебной практики</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Юрист-Аналитик</h1>
+        <p>Анализ судебной практики и юридических рисков</p>
+    </header>
+
+    <div class="search-container">
+        <input id="query" type="text" placeholder="Опишите юридическую ситуацию...">
+        <button class="search-btn" onclick="runSearch()">Анализировать</button>
+    </div>
+
+    <div class="container">
+        <div class="results-panel">
+            <h2>Найденные материалы</h2>
+            <div id="results">
+                <p class="placeholder-text">Введите запрос для поиска судебной практики</p>
+            </div>
+        </div>
+        
+        <div class="analysis-panel">
+            <h2>Юридический анализ</h2>
+            <div id="analysis">
+                <p class="placeholder-text">Здесь будет отображаться подробный анализ ситуации</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Для профессионального использования. Рекомендуется консультация с юристом.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

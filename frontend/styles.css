@@ -1,0 +1,258 @@
+/* frontend/style.css */
+:root {
+    --primary-color: #1a56db;
+    --secondary-color: #0e47a1;
+    --text-color: #333;
+    --light-gray: #f5f7ff;
+    --border-color: #e2e8f0;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9fafc;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+#query {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#query:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.2);
+}
+
+.search-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+}
+
+.search-btn:active {
+    transform: translateY(1px);
+}
+
+.search-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 20px;
+}
+
+.results-panel, .analysis-panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.results-panel {
+    flex: 1;
+    min-width: 300px;
+}
+
+.analysis-panel {
+    flex: 2;
+    min-width: 400px;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.placeholder-text {
+    color: #6b7280;
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.result-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.result-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+}
+
+.result-title a:hover {
+    text-decoration: underline;
+}
+
+.result-snippet {
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.result-source {
+    display: inline-block;
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(26, 86, 219, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Стили для markdown-анализа */
+#analysis h3 {
+    color: var(--secondary-color);
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#analysis ul, #analysis ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+#analysis li {
+    margin-bottom: 0.5rem;
+}
+
+#analysis p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+#analysis blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    background: var(--light-gray);
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.risk-high {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.risk-medium {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+.risk-low {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .results-panel, .analysis-panel {
+        width: 100%;
+    }
+}
